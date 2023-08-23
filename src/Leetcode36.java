@@ -4,7 +4,7 @@ public class Leetcode36 {
         boolean[][] row = new boolean[count][count];
         boolean[][] column = new boolean[count][count];
         boolean[][] area = new boolean[count][count];
-
+ 
         for(int i = 0; i < board.length; i++) {
             for(int j = 0; j < board[i].length; j++) {
                 if(Character.isDigit(board[i][j]) == false) {
