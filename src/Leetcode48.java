@@ -3,8 +3,14 @@
 import java.util.Arrays;
 
 public class Leetcode48 {
+    /*
+     * 48. Rotate Image
+     */
     public void rotate(int[][] matrix) {
+        // inisiasi nilai row
         int row = 0;
+
+        // iterasi untuk  
         for(int i = 0; i < matrix.length/2; i++) {
             row = matrix.length - 1 - i;
             for(int j = i; j < row; j++) {
