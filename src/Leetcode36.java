@@ -1,5 +1,7 @@
 public class Leetcode36 {
     public boolean isValidSudoku(char[][] board) {
+
+        // inisiasi count sebagai ukuran dari board
         int count = 9;
         boolean[][] row = new boolean[count][count];
         boolean[][] column = new boolean[count][count];
