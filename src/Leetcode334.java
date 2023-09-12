@@ -12,7 +12,7 @@ public class Leetcode334 {
         // inisiasi nilai second dengan nilai maksimum dari integer
         int second = Integer.MAX_VALUE;
 
-        // iterasi nilai array nums dan tergantung juga nilai result
+        // iterasi nilai array nums dan terg antung juga nilai result
         for(int i = 1; i < nums.length && !result; i++) {
             // Jika nilai sekarang lebih besar dari nilai second
             if(nums[i] > second) {
