@@ -34,7 +34,7 @@ public class Leetcode35 {
         }
         return firstIndex;
     }
-
+ 
     public static void main(String[] args) {
         Leetcode35 leetcode35 = new Leetcode35();
         int[] nums = {1,3,5,6};
