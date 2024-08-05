@@ -18,3 +18,5 @@ SQL 50 **Done**
 # Leetcode Solution
 
 **coming soon**
+
+https://www.capcut.com/capcut_pc_web/fission_receive?code=21lyQm52096313&lng=en
