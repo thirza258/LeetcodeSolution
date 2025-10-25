@@ -3,49 +3,65 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 
-public class Leetcode102 {
-    public List<List<Integer>> levelOrder(TreeNode root) {
+public class Leetcode103 {
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         if (root == null) {
             return result;
         }
-        
+
         Queue<TreeNode> queue = new ArrayDeque<>();
         queue.offer(root);
-        
-       for (int level = queue.size(); level > 0; level = queue.size()) {
+        boolean leftToRight = true; 
+
+        for (int level = queue.size(); level > 0; level = queue.size()) {
             List<Integer> currentLevel = new ArrayList<>();
+            List<TreeNode> nodesThisLevel = new ArrayList<>();
+
+        
             for (int i = 0; i < level; i++) {
                 TreeNode node = queue.poll();
-                currentLevel.add(node.val);
+                nodesThisLevel.add(node);
+
                 
                 if (node.left != null) {
                     queue.offer(node.left);
                 }
-                
                 if (node.right != null) {
                     queue.offer(node.right);
                 }
             }
-            result.add(currentLevel);
-        }
-        
-        return result;
 
+        
+            for (int i = 0; i < nodesThisLevel.size(); i++) {
+                TreeNode node = nodesThisLevel.get(i);
+                if (leftToRight) {
+                    currentLevel.add(node.val);
+                } else {
+                    currentLevel.add(0, node.val);
+                }
+            }
+
+            result.add(currentLevel);
+            leftToRight = !leftToRight; 
+        }
+
+        return result;
     }
 }
 
-class TreeNode {
+ class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
-    
-    TreeNode() {}
-    
-    TreeNode(int val) {
-        this.val = val;
+    TreeNode() {
+
     }
-    
+    TreeNode(int val) { 
+        this.val = val; 
+        this.left = null;
+        this.right = null;
+    }
     TreeNode(int val, TreeNode left, TreeNode right) {
         this.val = val;
         this.left = left;
