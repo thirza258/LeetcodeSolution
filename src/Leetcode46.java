@@ -9,27 +9,29 @@ import java.util.List;
  */
 
 public class Leetcode46 {
-    public List<List<Integer>> permutation(int[] nums) {
-        List<List<Integer>> result = new ArrayList<>();
-        List<Integer> current = new ArrayList<>();
-
-
-        if(nums.length < 2) {
-            for(int i = 0; i < nums.length; i++) {
-                current.add(nums[i]);
-            }
-            result.add(current);
-            return result;
+    public List<List<Integer>> permute(int[] nums) {
+        if(nums == null || nums.length == 0) {
+            return List.of();
         }
 
+        List<List<Integer>> result = new ArrayList<>();
 
-        for(int i = 0; i < nums.length - 1; i++) {
-            current.add(nums[i]);
-            for(int j = 0; j < current.size(); j++) {
-                for(int k = i + 1; k < result.get(j).size(); k++) {
-                    List<Integer> temp = current;
+        result.add(new ArrayList<>());
+
+        for (int i = 0; i < nums.length; i++) {
+            List<List<Integer>> permutations = new ArrayList<>();
+            for(int j = 0; j < result.size(); j++) {
+                List<Integer> currentPermutation = result.get(j);
+                for(int k = 0; k <= currentPermutation.size(); k++) {
+                    List<Integer> newPermutation = new ArrayList<>(currentPermutation);
+                    newPermutation.add(k, nums[i]);
+                    permutations.add(newPermutation);
                 }
             }
+
+            result = permutations;
         }
+
+        return result;
     }
 }
