@@ -5,7 +5,7 @@
 
 Badge 30 days of pandas **Done**
 
-Badge 150 Interview Question **OnGoing**
+Badge 150 Interview Question **Done**
 
 Badge Leetcode 75 **OnGoing**
 
